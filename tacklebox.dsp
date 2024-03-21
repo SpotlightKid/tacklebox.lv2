@@ -1,76 +1,76 @@
 import("stdfaust.lib");
 
 
-stage1LowShelfFrequency = hslider("stage1LowShelfFrequency", 100, 10, 1000, 0.01);
-stage1LowShelfQ = hslider("stage1LowShelfQ", 1, 1, 32, 0.01);
-stage1LowShelfGain = hslider("stage1LowShelfGain", 0, -32, 92, 0.01);
+stage1LowShelfFrequency = hslider("Stage 1 - LowShelf - Frequency", 100, 10, 1000, 0.01);
+stage1LowShelfQ = hslider("Stage 1 - LowShelf - Q", 1, 1, 32, 0.01);
+stage1LowShelfGain = hslider("Stage 1 - LowShelf - Gain", 0, -32, 92, 0.01);
 
-stage1HighShelfFrequency = hslider("stage1HighShelfFrequency", 8000, 1000, 20000, 0.01);
-stage1HighShelfQ = hslider("stage1HighShelfQ", 1, 1, 32, 0.01);
-stage1HighShelfGain = hslider("stage1HighShelfGain", 0, -32, 92, 0.01);
+stage1HighShelfFrequency = hslider("Stage 1 - HighShelf - Frequency", 8000, 1000, 20000, 0.01);
+stage1HighShelfQ = hslider("Stage 1 - HighShelf - Q", 1, 1, 32, 0.01);
+stage1HighShelfGain = hslider("Stage 1 - HighShelf - Gain", 0, -32, 92, 0.01);
 
-stage1Bell1Frequency = hslider("stage1Bell1Frequency", 200, 10, 1000, 0.01);
-stage1Bell1Q = hslider("stage1Bell1Q", 1, 1, 32, 0.01);
-stage1Bell1Gain = hslider("stage1Bell1Gain", 0, -32, 92, 0.01);
+stage1Bell1Frequency = hslider("Stage 1 - Bell 1 - Frequency", 200, 10, 1000, 0.01);
+stage1Bell1Q = hslider("Stage 1 - Bell 1 - Q", 1, 1, 32, 0.01);
+stage1Bell1Gain = hslider("Stage 1 - Bell 1 - Gain", 0, -32, 92, 0.01);
 
-stage1Bell2Frequency = hslider("stage1Bell2Frequency", 500, 10, 3000, 0.01);
-stage1Bell2Q = hslider("stage1Bell2Q", 1, 1, 32, 0.01);
-stage1Bell2Gain = hslider("stage1Bell2Gain", 0, -32, 92, 0.01);
+stage1Bell2Frequency = hslider("Stage 1 - Bell 2 - Frequency", 500, 10, 3000, 0.01);
+stage1Bell2Q = hslider("Stage 1 - Bell 2 - Q", 1, 1, 32, 0.01);
+stage1Bell2Gain = hslider("Stage 1 - Bell 2 - Gain", 0, -32, 92, 0.01);
 
-stage1Bell3Frequency = hslider("stage1Bell3Frequency", 2000, 10, 8000, 0.01);
-stage1Bell3Q = hslider("stage1Bell3Q", 1, 1, 32, 0.01);
-stage1Bell3Gain = hslider("stage1Bell3Gain", 0, -32, 92, 0.01);
+stage1Bell3Frequency = hslider("Stage 1 - Bell 3 - Frequency", 2000, 10, 8000, 0.01);
+stage1Bell3Q = hslider("Stage 1 - Bell 3 - Q", 1, 1, 32, 0.01);
+stage1Bell3Gain = hslider("Stage 1 - Bell 3 - Gain", 0, -32, 92, 0.01);
 
-stage1Gain = hslider("stage1Gain", 0, -36, 92, 0.1) : ba.db2linear;
-
-
-
-stage2LowShelfFrequency = hslider("stage2LowShelfFrequency", 100, 10, 1000, 0.01);
-stage2LowShelfQ = hslider("stage2LowShelfQ", 1, 1, 32, 0.01);
-stage2LowShelfGain = hslider("stage2LowShelfGain", 0, -32, 92, 0.01);
-
-stage2HighShelfFrequency = hslider("stage2HighShelfFrequency", 8000, 1000, 20000, 0.01);
-stage2HighShelfQ = hslider("stage2HighShelfQ", 1, 1, 32, 0.01);
-stage2HighShelfGain = hslider("stage2HighShelfGain", 0, -32, 92, 0.01);
-
-stage2Bell1Frequency = hslider("stage2Bell1Frequency", 200, 10, 1000, 0.01);
-stage2Bell1Q = hslider("stage2Bell1Q", 1, 1, 32, 0.01);
-stage2Bell1Gain = hslider("stage2Bell1Gain", 0, -32, 92, 0.01);
-
-stage2Bell2Frequency = hslider("stage2Bell2Frequency", 500, 10, 3000, 0.01);
-stage2Bell2Q = hslider("stage2Bell2Q", 1, 1, 32, 0.01);
-stage2Bell2Gain = hslider("stage2Bell2Gain", 0, -32, 92, 0.01);
-
-stage2Bell3Frequency = hslider("stage2Bell3Frequency", 2000, 10, 8000, 0.01);
-stage2Bell3Q = hslider("stage2Bell3Q", 1, 1, 32, 0.01);
-stage2Bell3Gain = hslider("stage2Bell3Gain", 0, -32, 92, 0.01);
-
-stage2Gain = hslider("stage2Gain", 0, -36, 92, 0.1) : ba.db2linear;
+stage1Gain = hslider("Stage 1 -  - Gain", 0, -36, 92, 0.1) : ba.db2linear;
 
 
-stage3LowShelfFrequency = hslider("stage3LowShelfFrequency", 100, 10, 1000, 0.01);
-stage3LowShelfQ = hslider("stage3LowShelfQ", 1, 1, 32, 0.01);
-stage3LowShelfGain = hslider("stage3LowShelfGain", 0, -32, 92, 0.01);
 
-stage3HighShelfFrequency = hslider("stage3HighShelfFrequency", 8000, 1000, 20000, 0.01);
-stage3HighShelfQ = hslider("stage3HighShelfQ", 1, 1, 32, 0.01);
-stage3HighShelfGain = hslider("stage3HighShelfGain", 0, -32, 92, 0.01);
+stage2LowShelfFrequency = hslider("Stage 2 - LowShelf - Frequency", 100, 10, 1000, 0.01);
+stage2LowShelfQ = hslider("Stage 2 - LowShelf - Q", 1, 1, 32, 0.01);
+stage2LowShelfGain = hslider("Stage 2 - LowShelf - Gain", 0, -32, 92, 0.01);
 
-stage3Bell1Frequency = hslider("stage3Bell1Frequency", 200, 10, 1000, 0.01);
-stage3Bell1Q = hslider("stage3Bell1Q", 1, 1, 32, 0.01);
-stage3Bell1Gain = hslider("stage3Bell1Gain", 0, -32, 92, 0.01);
+stage2HighShelfFrequency = hslider("Stage 2 - HighShelf - Frequency", 8000, 1000, 20000, 0.01);
+stage2HighShelfQ = hslider("Stage 2 - HighShelf - Q", 1, 1, 32, 0.01);
+stage2HighShelfGain = hslider("Stage 2 - HighShelf - Gain", 0, -32, 92, 0.01);
 
-stage3Bell2Frequency = hslider("stage3Bell2Frequency", 500, 10, 3000, 0.01);
-stage3Bell2Q = hslider("stage3Bell2Q", 1, 1, 32, 0.01);
-stage3Bell2Gain = hslider("stage3Bell2Gain", 0, -32, 92, 0.01);
+stage2Bell1Frequency = hslider("Stage 2 - Bell 1 - Frequency", 200, 10, 1000, 0.01);
+stage2Bell1Q = hslider("Stage 2 - Bell 1 - Q", 1, 1, 32, 0.01);
+stage2Bell1Gain = hslider("Stage 2 - Bell 1 - Gain", 0, -32, 92, 0.01);
 
-stage3Bell3Frequency = hslider("stage3Bell3Frequency", 2000, 10, 8000, 0.01);
-stage3Bell3Q = hslider("stage3Bell3Q", 1, 1, 32, 0.01);
-stage3Bell3Gain = hslider("stage3Bell3Gain", 0, -32, 92, 0.01);
+stage2Bell2Frequency = hslider("Stage 2 - Bell 2 - Frequency", 500, 10, 3000, 0.01);
+stage2Bell2Q = hslider("Stage 2 - Bell 2 - Q", 1, 1, 32, 0.01);
+stage2Bell2Gain = hslider("Stage 2 - Bell 2 - Gain", 0, -32, 92, 0.01);
 
-stage3Gain = hslider("stage3Gain", 0, -36, 92, 0.1) : ba.db2linear;
+stage2Bell3Frequency = hslider("Stage 2 - Bell 3 - Frequency", 2000, 10, 8000, 0.01);
+stage2Bell3Q = hslider("Stage 2 - Bell 3 - Q", 1, 1, 32, 0.01);
+stage2Bell3Gain = hslider("Stage 2 - Bell 3 - Gain", 0, -32, 92, 0.01);
 
-stage4Gain = hslider("stage4Gain", 0, -36, 92, 0.1) : ba.db2linear;
+stage2Gain = hslider("Stage 2 -  - Gain", 0, -36, 92, 0.1) : ba.db2linear;
+
+
+stage3LowShelfFrequency = hslider("Stage 3 - LowShelf - Frequency", 100, 10, 1000, 0.01);
+stage3LowShelfQ = hslider("Stage 3 - LowShelf - Q", 1, 1, 32, 0.01);
+stage3LowShelfGain = hslider("Stage 3 - LowShelf - Gain", 0, -32, 92, 0.01);
+
+stage3HighShelfFrequency = hslider("Stage 3 - HighShelf - Frequency", 8000, 1000, 20000, 0.01);
+stage3HighShelfQ = hslider("Stage 3 - HighShelf - Q", 1, 1, 32, 0.01);
+stage3HighShelfGain = hslider("Stage 3 - HighShelf - Gain", 0, -32, 92, 0.01);
+
+stage3Bell1Frequency = hslider("Stage 3 - Bell 1 - Frequency", 200, 10, 1000, 0.01);
+stage3Bell1Q = hslider("Stage 3 - Bell 1 - Q", 1, 1, 32, 0.01);
+stage3Bell1Gain = hslider("Stage 3 - Bell 1 - Gain", 0, -32, 92, 0.01);
+
+stage3Bell2Frequency = hslider("Stage 3 - Bell 2 - Frequency", 500, 10, 3000, 0.01);
+stage3Bell2Q = hslider("Stage 3 - Bell 2 - Q", 1, 1, 32, 0.01);
+stage3Bell2Gain = hslider("Stage 3 - Bell 2 - Gain", 0, -32, 92, 0.01);
+
+stage3Bell3Frequency = hslider("Stage 3 - Bell 3 - Frequency", 2000, 10, 8000, 0.01);
+stage3Bell3Q = hslider("Stage 3 - Bell 3 - Q", 1, 1, 32, 0.01);
+stage3Bell3Gain = hslider("Stage 3 - Bell 3 - Gain", 0, -32, 92, 0.01);
+
+stage3Gain = hslider("Stage 3 -  - Gain", 0, -36, 92, 0.1) : ba.db2linear;
+
+stage4Gain = hslider("stage4 - Gain", 0, -36, 92, 0.1) : ba.db2linear;
 
 
 process = 
